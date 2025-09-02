@@ -1,0 +1,17 @@
+# If true, use the same Y as where the player entered the portal.
+keep_same_y: false
+# If keep_same_y is false, land at this Y in the End:
+fixed_y: 80
+
+# Build a safety platform if the target is unsafe.
+build_platform_if_unsafe: true
+platform_material: OBSIDIAN
+platform_size: 3          # 3x3 centered on target
+clear_headroom: 3
+
+# Clamp Y to the world's range to avoid OOB teleports.
+y_min: 10
+y_max: 240
+
+# Fallback End world name if none detected by environment scan.
+end_world_name_fallback: "world_the_end"

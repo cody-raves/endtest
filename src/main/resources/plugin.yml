@@ -1,0 +1,6 @@
+name: endtest
+main: cody.endtest.Endtest
+version: 1.0.0
+api-version: '1.21'
+author: cody_raves
+description: End portals send players to the same X/Z (and optional Y) in the End.

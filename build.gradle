@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'cody'
+version = '1.0.0'
+description = 'endtest'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT'
+}
+
+tasks.named('jar') {
+    archiveBaseName = 'endtest'
+}
+
+tasks.named('shadowJar') {
+    archiveBaseName = 'endtest'
+    archiveClassifier = ''
+    archiveVersion = version
+}
+
+tasks.named('build') { dependsOn tasks.named('shadowJar') }
